@@ -1,2 +1,2 @@
 # SRAM-16BYTES
-# A SRAM with 16bytes memory to write and read from it.
+# A memory of 16bytes to write and read from it.
