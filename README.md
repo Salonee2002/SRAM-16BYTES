@@ -1,7 +1,5 @@
 # SRAM-16BYTES
 
-# SRAM (Static Random-Access Memory)
-
 Welcome to the SRAM repository! This project aims to provide a comprehensive collection of SRAM-related resources, designs, and tools for engineers, researchers, and enthusiasts in the field of digital electronics and integrated circuit design.
 
 ## About SRAM
