@@ -13,6 +13,9 @@ Hi. This project aims to provide a comprehensive knowledge how we initiated our 
 
 ## Introduction
 SRAM, or Static Random-Access Memory, is a fundamental component in modern digital systems, widely used for fast, volatile data storage. It plays a crucial role in processors, memory hierarchies, and various application-specific integrated circuits (ASICs). Unlike dynamic-RAM which must be continuosly refreshed SRAM doesn't have this requirement resulting better performance and low power usage. 
+Here is the block diagram of the SRAM:
+
+![sram_blockdiagram](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sram_blockdiagram.png)
 
 ## 6T SRAM Cell
 
