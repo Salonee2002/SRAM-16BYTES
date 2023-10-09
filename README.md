@@ -29,25 +29,27 @@ Let initially the data is 0 at node-1 and 1 at node-2. Since the node-1 is 0, NM
 Varying Vbl from 0 to Vdd the node-1 voltage (Vx) increases gradually and becomes constant at our set voltage 0.3V.<br>
 ![read_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_sweep.png)
 
-
 ### Transient (reading)
 When Vwl=1 it reads the node-1 voltage, i.e 0.
+![read_trans]()
 
 ### DC sweep (writing)
 varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
+![write_sweep]()
 
 ### Transient (writing)
-
+![write_trans]()
 
 ### SNM
 
 
 ## Pre-Charge Circuit
-
+![PC](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/PC.drawio.png)
 
 
 ## Row Decoder
-
+![PC](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/row_decoder.drawio.png)<br>
+Row decoder is used to select the row in which we want to write 8-bits data or read 8-bits data to or from the SRAM. 
 
 ## Write Driver
 
