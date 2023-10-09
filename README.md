@@ -26,7 +26,9 @@ Let initially the data is 0 at node-1 and 1 at node-2. Since the node-1 is 0, NM
 ### Sizing of the transistors
 
 ### DC sweep (reading)
-Varying Vbl from 0 to Vdd the node-1 voltage (Vx) increases gradually and becomes constant at our set voltage 0.3V.
+Varying Vbl from 0 to Vdd the node-1 voltage (Vx) increases gradually and becomes constant at our set voltage 0.3V.<br>
+![read_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_sweep.png)
+
 
 ### Transient (reading)
 When Vwl=1 it reads the node-1 voltage, i.e 0.
