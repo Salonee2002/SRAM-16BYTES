@@ -48,7 +48,7 @@ varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
 
 
 ## Row Decoder
-![PC](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/row_decoder.drawio.png)<br>
+![Row_decoder](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/row_decoder.drawio.png)<br>
 Row decoder is used to select the row in which we want to write 8-bits data or read 8-bits data to or from the SRAM. 
 
 ## Write Driver
