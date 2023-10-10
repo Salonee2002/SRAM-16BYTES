@@ -31,14 +31,14 @@ Varying Vbl from 0 to Vdd the node-1 voltage (Vx) increases gradually and become
 
 ### Transient (reading)
 When Vwl=1 it reads the node-1 voltage, i.e 0.
-![read_trans]()
+![read_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_trans.png)
 
 ### DC sweep (writing)
 varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
-![write_sweep]()
+![write_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_sweep.png)
 
 ### Transient (writing)
-![write_trans]()
+![write_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_trans.png)
 
 ### SNM
 
@@ -52,7 +52,8 @@ varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
 Row decoder is used to select the row in which we want to write 8-bits data or read 8-bits data to or from the SRAM. 
 
 ## Write Driver
-
+![Write_driver](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_driver.drawio.png)<br>
+![Write_switch](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_switch.drawio.png)<br>
 
 ## Sense Amplifier
 It is a differencial amplifier based sense amplifier. This device allows a quick reading of the differencial signal on the bit lines, so that the discharging process can be stopped as soon as possible, to the advantage of speed and power consumption.<br>
