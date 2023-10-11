@@ -31,18 +31,18 @@ Let initially the data is 0 at node-1 and 1 at node-2. Since the node-1 is 0, NM
 
 ### DC sweep (reading)
 Varying Vbl from 0 to Vdd the node-1 voltage (Vx) increases gradually and becomes constant at our set voltage 0.3V.<br>
-
+![read_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_sweep.png​)
 
 ### Transient (reading)
 When Vwl=1 it reads the node-1 voltage, i.e 0.
-
+![read_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_trans.png​)
 
 ### DC sweep (writing)
 varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
-
+![write_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_sweep.png)
 
 ### Transient (writing)
-
+![write_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_trans.png​)
 
 ### SNM
 
