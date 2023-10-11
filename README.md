@@ -4,16 +4,16 @@ Hi. This project aims to provide a comprehensive knowledge how we initiated our 
 
 ## Content
 
-- Introduction
-- 6T SRAM Cell
-- Pre-Charge Circuit
-- Row Decoder
-- Write Driver
-- Sense Amplifier
-- Schematic Designs
-- Testbench
-- Result Analysis and Discussion
-- Conclusion
+- [Introduction](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#introduction)
+- [6T SRAM Cell](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#6t-sram-cell)
+- [Pre-Charge Circuit](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#pre-charge-circuit)
+- [Row Decoder](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#row-decoder)
+- [Write Driver](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#write-driver)
+- [Sense Amplifier](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#sense-amplifier)
+- [Schematic Designs]()
+- [Testbench]()
+- [Result Analysis and Discussion]()
+- [Conclusion]()
 
 ## Introduction
 SRAM, or Static Random-Access Memory, is a fundamental component in modern digital systems, widely used for fast, volatile data storage. It plays a crucial role in processors, memory hierarchies, and various application-specific integrated circuits (ASICs). Unlike dynamic-RAM which must be continuosly refreshed SRAM doesn't have this requirement resulting better performance and low power usage. 
@@ -49,6 +49,7 @@ When Vwl=1 it reads the node-1 voltage, i.e 0.
 ![write_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_trans.png)
 
 ### SNM
+SNM is the measure of stability of the SRAM cell to hold its data against noise. SNM of SRAM is defined as minimum amount of noise voltage present on the storing nodes of SRAM requires to flip the state of the cell. This graph is plotted between the node-1 and node-2.
 ![SNM](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/SNM.png)
 
 ## Pre-Charge Circuit
