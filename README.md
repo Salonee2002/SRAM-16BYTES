@@ -45,7 +45,7 @@ When Vwl=1 it reads the node-1 voltage, i.e 0.
 ![write_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_trans.png)
 
 ### SNM
-
+![SNM](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/SNM.png)
 
 ## Pre-Charge Circuit
 ![PC](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/PC.drawio.png)
