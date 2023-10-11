@@ -51,8 +51,10 @@ varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
 
 
 ## Row Decoder
+The combinational circuit that change the binary informaton into 2^N output lines is known as decoder. Here, we have used 4:16 decoder, i.e 4 input lines and 16 output lines decoder.<br>
 ![Row_decoder](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/row_decoder.drawio.png)<br>
-Row decoder is used to select the row in which we want to write 8-bits data or read 8-bits data to or from the SRAM. 
+Row decoder is used to select the row in which we want to write 8-bits data or read 8-bits data to or from the SRAM.<br>
+So, basically, we provide the 4-bit address to the decoder where we want to perform the read or write operation. Inside the decoder if the control signal is 1 then the decoder output is the desired address. And this output is the **wordline** that goes to the SRAM to select the row (in each row 8 SRAMs are present) to read or write.
 
 ## Write Driver
 ![Write_driver](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_driver.drawio.png)<br>
