@@ -49,7 +49,9 @@ When Vwl=1 it reads the node-1 voltage, i.e 0.
 ![write_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_trans.png)
 
 ### SNM
-SNM is the measure of stability of the SRAM cell to hold its data against noise. SNM of SRAM is defined as minimum amount of noise voltage present on the storing nodes of SRAM requires to flip the state of the cell. This graph is plotted between the node-1 and node-2.
+SNM is the measure of stability of the SRAM cell to hold its data against noise. SNM of SRAM is defined as minimum amount of noise voltage present on the storing nodes of SRAM requires to flip the state of the cell. This graph is plotted between the node-1 and node-2.<br>
+![SNM_setup](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/SNM_setup.drawio.png)<br>
+
 ![SNM](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/SNM.png)
 
 ## Pre-Charge Circuit
