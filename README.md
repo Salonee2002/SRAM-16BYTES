@@ -34,7 +34,7 @@ Varying Vbl from 0 to Vdd the node-1 voltage (Vx) increases gradually and become
 ![read_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_sweep.png)
 ### Transient (reading)
 When Vwl=1 it reads the node-1 voltage, i.e 0.
-![read_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_trans.png​)
+![read_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_trans.png)
 
 ### DC sweep (writing)
 varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
