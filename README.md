@@ -39,7 +39,7 @@ When Vwl=1 it reads the node-1 voltage, i.e 0.
 
 ### DC sweep (writing)
 varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
-![write_sweep]()
+![write_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_sweep.png)
 
 ### Transient (writing)
 ![write_trans]()
