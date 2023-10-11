@@ -41,7 +41,7 @@ varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
 ![write_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_sweep.png)
 
 ### Transient (writing)
-![write_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_trans.png​)
+![write_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_trans.png)
 
 ### SNM
 
