@@ -19,7 +19,7 @@ Hi. This project aims to provide a comprehensive knowledge how we initiated our 
 SRAM, or Static Random-Access Memory, is a fundamental component in modern digital systems, widely used for fast, volatile data storage. It plays a crucial role in processors, memory hierarchies, and various application-specific integrated circuits (ASICs). Unlike dynamic-RAM which must be continuosly refreshed SRAM doesn't have this requirement resulting better performance and low power usage. 
 Here is the block diagram of the SRAM:
 
-![sram_blockdiagram](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sram_blockdiagram.png)
+![sram_block](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sram_block_1.drawio.png)
 
 ## 6T SRAM Cell
 For making a memory of 16 Bytes we need 16 rows and 8 columns of SRAM. For single SRAM, there exist a small intrinsic capacitor. But for 16 SRAM in one column each intrinsic capacitor are in parallel, so they gets added up. For writing to or reading from the SRAM the access transistor should be ON. <br>
@@ -41,6 +41,7 @@ varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
 ![write_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_sweep.png)
 
 ### Transient (writing)
+When Vwl=1 it reads the node-1 voltage, i.e 0.
 ![write_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_trans.png)
 
 ### SNM
