@@ -23,6 +23,7 @@ Here is the block diagram of the SRAM:
 
 ## 6T SRAM Cell
 For making a memory of 16 Bytes we need 16 rows and 8 columns of SRAM. For single SRAM, there exist a small intrinsic capacitor. But for 16 SRAM in one column each intrinsic capacitor are in parallel, so they gets added up. For writing to or reading from the SRAM the access transistor should be ON. <br>
+![6T_sram](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6T_sram.drawio.png)
 
 ### Working 
 Before reading or writing the two nodes, BL and BLB, should have the same voltage. We can do this in 2 ways - pre-charge and pre-discharge. But here, we have done pre-charge. 
