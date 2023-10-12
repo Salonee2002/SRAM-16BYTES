@@ -37,6 +37,8 @@ For M1, Vgs = 1.8V, Vds = 0.3V. So,Vds<Vgs-Vt. Hence M1 is in **linear**. <br><b
 **$I_{\text{DS1}} = \mu_{\text{n}} C_{\text{ox}} \frac{W}{L}$ [ $\left(V_{\text{GS}} - V_{\text{th}}\right) V_{\text{DS}} - \left(\frac{V_{\text{DS}}}{2}\right)^2$ ]** <br><br>
 **$I_{\text{DS1}} = \mu_{\text{n}} C_{\text{ox}} \frac{W}{L} (0.294)$**<br><br>
 Since, I3 = I1<br><br>
+**$\mu_{\text{n}} C_{\text{ox}} \frac{W}{L} (0.344) = \mu_{\text{n}} C_{\text{ox}} \frac{W}{L} (0.294)$**<br><br>
+Since, I3 = I1<br><br>
 <span style="font-size: larger;">**$\frac{(\frac{W}{L})_3}{(\frac{W}{L})_1} = \frac{0.294}{0.344}$**</span> <br><br>
 <span style="font-size: larger;">**$\frac{(\frac{W}{L})_3}{(\frac{W}{L})_1} = 0.85$**</span> <br><br>
 **$\frac{W}{L})_3 = 0.85 (\frac{W}{L})_1$** <br><br>
