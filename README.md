@@ -47,13 +47,13 @@ Since, I3 = I1<br><br>
 For M3, Vgs = 1.8V, Vds = 0..3V. So,Vds>Vgs-Vt. Hence M3 is in **linear**. <br><br>
 **$I_{\text{DS3}} = \mu_{\text{n}} C_{\text{ox}} \frac{W}{L}$ [ $\left(V_{\text{GS}} - V_{\text{th}}\right) V_{\text{DS}} - \left(\frac{V_{\text{DS}}}{2}\right)^2$ ]** <br><br>
 **$I_{\text{DS3}} = \mu_{\text{n}} C_{\text{ox}} \frac{W}{L} (0.294)$**<br><br>
-For M1, Vgs = 0V, Vds = 0.3V. So,Vds>Vgs-Vt. Hence M1 is in **saturation**. <br><br>
-**$I_{\text{DS3}} = \frac{1}{2} \mu C_{\text{ox}} \frac{W}{L} (V_{\text{GS}} - V_{\text{th}})^2$**<br><br>
-**$I_{\text{DS}} = \mu C_{\text{ox}} \frac{W}{L} (0.4489)$**<br><br>
-Since, I3 = I5<br><br>
-<span style="font-size: larger;">**$\frac{(\frac{W}{L})_5}{(\frac{W}{L})_3} = \frac{0.294}{0.4489}$**</span> <br><br>
-<span style="font-size: larger;">**$\frac{(\frac{W}{L})_5}{(\frac{W}{L})_3} = 2 $**</span> <br><br>
-**$\frac{W}{L})_3 = 0.85 (\frac{W}{L})_1$** <br><br>
+For M5, Vgs = 0V, Vds = 0.3V. So,Vds>Vgs-Vt. Hence M1 is in **saturation**. <br><br>
+**$I_{\text{DS5}} = \frac{1}{2} \mu_{\text{p}} C_{\text{ox}} \frac{W}{L} (V_{\text{GS}} - V_{\text{th}})^2$**<br><br>
+**$I_{\text{DS5}} = \mu_{\text{p}} C_{\text{ox}} \frac{W}{L} (0.4489)$**<br><br>
+Since, I5 = I3<br><br>
+<span style="font-size: larger;">**$\frac{(\frac{W}{L})_5}{(\frac{W}{L})_3}$ = 2 * &mu;<sub>n</sub> / &mu;<sub>p</sub> $\frac{0.294}{0.4489}$**</span> <br><br>
+<span style="font-size: larger;">**$\frac{(\frac{W}{L})_5}{(\frac{W}{L})_3}$** = 2 * 5 * 0.654</span> <br><br>
+**$(\frac{W}{L})_5 = 6.54 (\frac{W}{L})_3$** <br><br>
 
 
 
