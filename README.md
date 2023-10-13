@@ -23,7 +23,8 @@ Here is the block diagram of the SRAM:
 
 ## 6T SRAM Cell
 For making a memory of 16 Bytes we need 16 rows and 8 columns of SRAM. For single SRAM, there exist a small intrinsic capacitor. But for 16 SRAM in one column each intrinsic capacitor are in parallel, so they gets added up. For writing to or reading from the SRAM the access transistor should be ON. <br>
-![6T_sram](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6T_sram.drawio.png)
+![6T_sram](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6T_sram.drawio.png)<br>
+**M3 and M4 are called ACCESS TRANSISTORS.**
 
 ### Working 
 Before reading or writing the two nodes, BL and BLB, should have the same voltage. We can do this in 2 ways - pre-charge and pre-discharge. But here, we have done pre-charge. 
@@ -79,7 +80,16 @@ SNM is the measure of stability of the SRAM cell to hold its data against noise.
 ![SNM](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/SNM.png)
 
 ## Pre-Charge Circuit
-![PC](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/PC.drawio.png)
+This is the circuit for pre-charge.<br><br>
+![PC](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/PC.drawio.png)<br>
+
+Why do we do pre-charging or pre-discharging?
+Before reading or writing from/to the SRAM, we need to make the BL and BLB of same voltage, we can do it by either ways, by pre-charging them to 1.8V or pre-discharging them to 0V. 
+
+Then the next question arises that why did we go for pre-charge and not pre-discharge? <br>
+If we are going for pre-discharge then the area of the transistors increases by ____________________.
+
+Can we go for pre-charge and pmos as the access transistors?
 
 
 ## Row Decoder
