@@ -115,7 +115,15 @@ We have designed the transistors in such a way that current through transistor-1
 OPERATION :: <br>
 When BL=1.6V and BLB-1.8V, current through transistor-1 is 1uA. As transistor-2 is in current mirror with transistor-1 same current flows through it, i.e 1uA. Since BL voltage is 1.6V, I1=0.4uA (say) and I2=0.6uA. As transistor-5 and transistor-3 are in series, so, I3=0.4uA. Due to current mirror with transistor-6, the same current flows as of transistor-5, i.e 0.4uA. Current from node (0.2uA) will be added up with 0.4uA to satisfy KCL. Since node decreases, node voltage also decreases. Here, in this sense amplifier we have set the node voltage to 0.9991, it means when BL and BLB are at 1.8V the node voltage is 0.9991V. When node current decreases, the node voltage decreases below 0.9991V. The buffer connected to the sense amplifier is designed in such a way that a small change in output of sense amplifier amplifies to 0 or 1.
 
-## Schematic 
+## Schematic Designs
+**PC**<br>
+![PC_sc](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/PC_sc.png)<br><br>
+**SRAM**<br>
+![sram_sc](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sram_sc.png)<br><br>
+**SRAM_ARRAY**<br>
+![sram_arr_sc](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sram_array_sc.png)<br><br>
+**WRITE_SWITCH**<br>
+![write_switch](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_switch_sc.png)
 
 ## Testbench
 
