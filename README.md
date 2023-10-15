@@ -112,7 +112,7 @@ This is write driver switch. Its basically used to write the data to the SRAM. <
 ![Write_switch](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_switch.drawio.png)<br>
 **Operation :**
 When rw and ctrl signal are both high RW signal is high. And when RW is high the driver switch is ON. data_in is the input and this will be written to the SRAM through BL and BLB.<br>
-![Write_ctrl]()<br>
+![Write_ctrl](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/RW.drawio.png)<br>
 
 ## Sense Amplifier
 
