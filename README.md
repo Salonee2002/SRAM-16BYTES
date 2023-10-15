@@ -46,7 +46,7 @@ Since, I3 = I1<br><br>
 <span style="font-size: larger;">**$\frac{(\frac{W}{L})_3}{(\frac{W}{L})_1} = 0.85$**</span> <br><br>
 **$\frac{W}{L})_3 = 0.85 (\frac{W}{L})_1$** <br><br>
 
-![write_op](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_operation.drawio.png)<br><br>
+![write_op](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_op.drawio.png)<br><br>
 For M3, Vgs = 1.8V, Vds = 0..3V. So,Vds>Vgs-Vt. Hence M3 is in **linear**. <br><br>
 **$I_{\text{DS3}} = \mu_{\text{n}} C_{\text{ox}} \frac{W}{L}$ [ $\left(V_{\text{GS}} - V_{\text{th}}\right) V_{\text{DS}} - \left(\frac{V_{\text{DS}}}{2}\right)^2$ ]** <br><br>
 **$I_{\text{DS3}} = \mu_{\text{n}} C_{\text{ox}} \frac{W}{L} (0.294)$**<br><br>
