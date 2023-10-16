@@ -149,6 +149,8 @@ Here is the sizes of the sense amplifier and the buffer :
 | W<sub>pb2</sub> | 930n | 6 |
 | W<sub>nb2</sub> | 300n | 6 |
 
+<br>![sense_amp_graph]()
+
 ## Schematic Designs
 **PC**<br>
 ![PC_sc](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/PC_sc.png)<br><br>
