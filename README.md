@@ -12,7 +12,7 @@ Hi. This project aims to provide a comprehensive knowledge how we initiated our 
 - [Sense Amplifier](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#sense-amplifier)
 - [Schematic Designs](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#schematic-designs)
 - [Testbench](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#testbench)
-- [Result Analysis and Discussion]()
+- [Result Analysis and Discussion](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#result-analysis-and-discussion)
 - [Conclusion]()
 
 ## Introduction
