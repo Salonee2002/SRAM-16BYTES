@@ -56,13 +56,12 @@ For M5, Vgs = 0V, Vds = 0.3V. So,Vds>Vgs-Vt. Hence M1 is in **saturation**. <br>
 Since, I5 = I3<br><br>
 <span style="font-size: larger;">**$\frac{(\frac{W}{L})_5}{(\frac{W}{L})_3}$ = 2 * &mu;<sub>n</sub> / &mu;<sub>p</sub> $\frac{0.294}{0.4489}$**</span> <br><br>
 <span style="font-size: larger;">**$\frac{(\frac{W}{L})_5}{(\frac{W}{L})_3}$** = 2 * 5 * 0.654</span> <br><br>
-**$(\frac{W}{L})_5 = 6.54 (\frac{W}{L})_3$** <br><br>
-
-
+**$(\frac{W}{L})_5 = 6.54 (\frac{W}{L})_3$** 
 
 ### DC sweep (reading)
 Varying Vbl from 0 to Vdd the node-1 voltage (Vx) increases gradually and becomes constant at our set voltage 0.3V.<br>
 ![read_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_sweep.png)
+
 ### Transient (reading)
 When Vwl=1 it reads the node-1 voltage, i.e 0.
 ![read_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_trans.png)
@@ -164,7 +163,8 @@ Here is the sizes of the sense amplifier and the buffer :
 
 ## Testbench
 
-![test_in](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/testbench_in.png)
+![test_in](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/testbench_in.png)<br>
+
 <br>TOP TESTBENCH<br>
 ![test_top](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/testbench_top.png)
 
@@ -182,11 +182,40 @@ From this graph we have also calculated the delays, i.e write delay, read delay,
 | Tm | read| 8.106ns | 8.573ns | 9.043ns |
 |  | write | 1.074ns | 1.0178ns | 1.276ns |
 | Ws | read | 6.75ns | 7.15ns | 7.253ns |
-|  | write | 1.348ns | 1.481ns | 1.601ns |
+|  | write | 1.348ns | 1.481ns | 1.601ns |    
 
+**TO READ OR WRITE '1' :**
+| Corners | Operation | -40 | 27 | 85 |
+| :---------: | :----------: | :----------: | :----------: | :----------: |
+| Wp | read| 2.355ns | 1.841ns | 1.81ns |
+|  | write| 942.3ps | 1.037ns | 1.126ns |
+| Tm | read| 4.527ns | 4.343ns | 4.189ns |
+|  | write | 1.178ns | 1.303ns | 1.419ns |
+| Ws | read | 6.142ns | 6.033ns | 5.894ns |
+|  | write | 1.49ns | 1.651ns | 1.796ns |  
 
+**PC_BL delay and PC_dec delay**
+**PC to BL delay**
+| Corners | -40 | 27 | 85 |
+| :---------: | :----------: | :----------: | :----------: |
+| Tm | 350.5p | 383.1p | 309.7p |
+| Wp | 292.1p | 314.6p | 240.7p |
+| Tm | 410.5p | 464p | 458.3p |  
 
+**PC to decoder delay**
+| Corners | -40 | 27 | 85 |
+| :---------: | :----------: | :----------: | :----------: |
+| Tm | 1.043ns | 1.187ns | 1.297ns |
+| Wp | 874.1ps | 992.2ps | 1.096ns |
+| Tm | 1.253ns | 1.418ns | 1.555ns |  
 
+From these tables, we can see the delays are more for reading zero (0) than one (1) because the pmos we have used in sense amplifier's buffer has more strength than the nmos used in buffer. As we know, pmos is a pull-up device, therefore, discharging in the node of sense amplifier takes more time than reading 1.
+We can also find that delays are abnormal because the node voltage of the sense amplifier is not being stable at the 999.1mV when BL and BLB are 1.8V.
+
+**The maximum operating frequency is 50Mhz.** <br>
+In our circuit we have operated in 20Mhz.
 
 
 ## Conclusion
+
+
