@@ -147,7 +147,8 @@ Here is the sizes of the sense amplifier and the buffer :
 | W<sub>pb1</sub> | 930n | 6 |
 | W<sub>nb1</sub> | 300n | 1 |
 | W<sub>pb2</sub> | 930n | 6 |
-| W<sub>nb2</sub> | 300n | 6 |
+| W<sub>nb2</sub> | 300n | 6 |  
+
 <br><br>Here, it is the graph of the sense ampllifier with different conditions of the BL and BLB.
 <br>![sense_amp_graph](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/Screenshot%20from%202023-10-16%2013-21-54.png)
 
@@ -164,12 +165,28 @@ Here is the sizes of the sense amplifier and the buffer :
 ## Testbench
 
 ![test_in](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/testbench_in.png​)
-<br>TOP TESTBENCH
+<br>TOP TESTBENCH<br>
 ![test_top](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/testbench_top.png​)
 
 ## Result Analysis and Discussion
 
 The overall graph we got is shown below : <br><br>
-![overall_graph]()
+![overall_graph](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/overall_graph.png)<br><br>
+From this graph we have also calculated the delays, i.e write delay, read delay, delay from PC to BL (time taken by the BL to become stable from PC), delay from PC to decoder (time taken by the decoder to be stable from PC). The delays are show below : <br><br>
+
+**TO READ OR WRITE '0' :**
+| Corners | Operation | -40 | 27 | 85 |
+| :---------: | :----------: | :----------: | :----------: | :----------: |
+| Wp | read| 10.02ns | 10.16ns | 10ns |
+|  | write| 867ps | 971ps | 1.023ns |
+| Tm | read| 8.106ns | 8.573ns | 9.043ns |
+|  | write | 1.074ns | 1.0178ns | 1.276ns |
+| Ws | read | 6.75ns | 7.15ns | 7.253ns |
+|  | write | 1.348ns | 1.481ns | 1.601ns |
+
+
+
+
+
 
 ## Conclusion
