@@ -10,10 +10,10 @@ Hi. This project aims to provide a comprehensive knowledge how we initiated our 
 - [Row Decoder](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#row-decoder)
 - [Write Driver](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#write-driver)
 - [Sense Amplifier](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#sense-amplifier)
-- [Schematic Designs](https://github.com/Salonee2002/SRAM-16BYTES/edit/main/README.md#schematic-designs)
-- [Testbench](https://github.com/Salonee2002/SRAM-16BYTES/edit/main/README.md#testbench)
-- [Result Analysis and Discussion](https://github.com/Salonee2002/SRAM-16BYTES/edit/main/README.md#result-analysis-and-discussion)
-- [Conclusion](https://github.com/Salonee2002/SRAM-16BYTES/edit/main/README.md#conclusion)
+- [Schematic Designs]()
+- [Testbench]()
+- [Result Analysis and Discussion]()
+- [Conclusion]()
 
 ## Introduction
 
