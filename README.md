@@ -10,7 +10,7 @@ Hi. This project aims to provide a comprehensive knowledge how we initiated our 
 - [Row Decoder](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#row-decoder)
 - [Write Driver](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#write-driver)
 - [Sense Amplifier](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#sense-amplifier)
-- [Schematic Designs]()
+- [Schematic Designs](https://github.com/Salonee2002/SRAM-16BYTES/edit/main/README.md#schematic-designs)
 - [Testbench]()
 - [Result Analysis and Discussion]()
 - [Conclusion]()
@@ -107,26 +107,47 @@ So, basically, we provide the 4-bit address to the decoder where we want to perf
 ## Write Driver
 
 This is the write driver.<br>
-![Write_driver](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_driver.drawio.png)<br>
+![Write_driver](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_driver.drawio.png)<br><br>
 This is write driver switch. Its basically used to write the data to the SRAM. <br>
-![Write_switch](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_switch.drawio.png)<br>
+![Write_switch](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_switch.drawio.png)<br><br>
 **Operation :**
-When rw and ctrl signal are both high RW signal is high. And when RW is high the driver switch is ON. data_in is the input and this will be written to the SRAM through BL and BLB.<br>
+When rw and ctrl signal are both high RW signal is high. And when RW is high the driver switch is ON. din is the input and this will be written to the SRAM through BL and BLB.<br><br>
 ![Write_ctrl](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/RW.drawio.png)<br>
 
 ## Sense Amplifier
 
 It is a differencial amplifier based sense amplifier. This device allows a quick reading of the differencial signal on the bit lines, so that the discharging process can be stopped as soon as possible, to the advantage of speed and power consumption.<br>
-![sense_amp](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sense_amp.drawio.png)
-We have designed the transistors in such a way that current through transistor-0 and transistor-5 are equal, i.e 1uA. The transistor-0 and transistor-5 are in current mirror. According to KCL, the current is divided equally through transistor-1 and transistor-2, i.e 0.5uA each. As transistor-3 and transistor-4 are in series with transistor-1 and transistor-2 respectively, same current flows through them. To make the current in transistor-4 same as transistor-3, both should in current mirror.<br> 
+![sense_amp](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sense_amp.drawio.png)<br>
+We have designed the transistors in such a way that current through transistor-0 and transistor-5 are equal, i.e 1uA. The transistor-0 and transistor-5 are in current mirror. According to KCL, the current is divided equally through transistor-1 and transistor-2, i.e 0.5uA each. As transistor-3 and transistor-4 are in series with transistor-1 and transistor-2 respectively, same current flows through them. To make the current in transistor-4 same as transistor-3, both should in current mirror.<br> <br>
 OPERATION :: <br>
-When BL=1.6V and BLB-1.8V, current through transistor-0 is 1uA. As transistor-0 is in current mirror with transistor-5 same current flows through it, i.e 1uA. Since BL voltage is 1.6V, I1=0.4uA (say) and I2=0.6uA (according to KCL ). As transistor-1 and transistor-3 are in series, so, I3=0.4uA. Due to current mirror with transistor-3, the same current flows as of transistor-4, i.e 0.4uA. Current from node (0.2uA) will be added up with 0.4uA to satisfy KCL. Since node current decreases, node voltage also decreases. Here, in this sense amplifier we have set the node voltage to 0.9991, it means when BL and BLB are at 1.8V the node voltage is 0.9991V. When node current decreases, the node voltage decreases below 0.9991V. The buffer connected to the sense amplifier is designed in such a way that a small change in output of sense amplifier amplifies to 0 or 1.<br>
+When BL=1.6V and BLB-1.8V, current through transistor-0 is 1uA. As transistor-0 is in current mirror with transistor-5 same current flows through it, i.e 1uA. Since BL voltage is 1.6V, I1=0.4uA (say) and I2=0.6uA (according to KCL ). As transistor-1 and transistor-3 are in series, so, I3=0.4uA. Due to current mirror with transistor-3, the same current flows as of transistor-4, i.e 0.4uA. Current from node (0.2uA) will be added up with 0.4uA to satisfy KCL. Since node current decreases, node voltage also decreases. Here, in this sense amplifier we have set the node voltage to 0.9991, it means when BL and BLB are at 1.8V the node voltage is 0.9991V. When node current decreases, the node voltage decreases below 0.9991V. The buffer connected to the sense amplifier is designed in such a way that a small change in output of sense amplifier amplifies to 0 or 1.<br><br>
 DESIGN ::<br><br>
-![semse_amp_nmos](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/nmos_SA.png)<br>
-![sense_amp_pmos](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/pmos_SA.png)<br>
-![sense_amp_buff](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/buffer_SA.png)<br>
-![sense_amp_node](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/node_voltage_senseamp.png)
-![sense_amp_gain](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/gain_senseamp.png)<br>
+We know, I<sub>0</sub> = $\frac{1}{2} \mu_{\text{n}} C_{\text{ox}} \frac{W}{L} (V_{\text{GS}} - V_{\text{th}})^2 \(1 + \lambda V_{ds}\)$<br>
+Due to short channel effect, current increases through the transistors. So, we increase the length of transistor to maximum to decrease the $\lambda$ ($\lambda$ and L are inversely propotional) to make the current constant.<br>
+So,we have kept the length of transistors as 1um.
+First we have designed the nmos transisitors in such a way that it is in saturation region by keeping the g<sub>m</sub> over I<sub>d</sub> ratio between 4 and 10. We have kept the M5 transistor in saturation by connecting drain and gate. Keeping the gate voltage same of transistor M0 with transistor M5, it is also kept in saturation region.Here, our $\frac{gm}{Id}$ is around 9.<br>
+The transistors 1 and 2 are in subthreshold region.<br>
+![semse_amp_nmos](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/nmos_SA.png)<br><br>
+Then we did the same steps to keep the pmos in saturation region. And the $\frac{gm}{Id}$ is around 9. And also set the node voltage in such away that it is around 0.9V.<br>
+![sense_amp_pmos](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/pmos_SA.png)<br><br>
+We have kept the length of the transistors of buffer as 0.18um.
+Here, in our design we have kept it as 999.1mV. The buffer input voltage is 999.1mV and the first buffer output is 914mV and the final output is designed in such a way that it is either high (1.8V) or low (0V). <br>
+![sense_amp_buff](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/buffer_SA.png)<br><br>
+By doing the AC analysis of the node, we got the node voltage as 42.75V.
+![sense_amp_node](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/node_voltage_senseamp.png)<br><br>
+And the gain is 32.6dB. The maximum gain is 40dB when the node voltage is 100V during AC analysis.<br> 
+![sense_amp_gain](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/gain_senseamp.png)<br><br>
+
+Here is the sizes of the sense amplifier and the buffer :
+| Transistor | Size | Multipliers |
+| :---------: | :----------: | :----------: |
+| W<sub>M0,M5</sub> | 250n | 1 |
+| W<sub>M1,M2</sub> | 700n | 2 |
+| W<sub>M3,M4</sub> | 350n | 2 |
+| W<sub>pb1</sub> | 930n | 6 |
+| W<sub>nb1</sub> | 300n | 1 |
+| W<sub>pb2</sub> | 930n | 6 |
+| W<sub>nb2</sub> | 300n | 6 |
 
 ## Schematic Designs
 **PC**<br>
