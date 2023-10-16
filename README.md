@@ -148,8 +148,8 @@ Here is the sizes of the sense amplifier and the buffer :
 | W<sub>nb1</sub> | 300n | 1 |
 | W<sub>pb2</sub> | 930n | 6 |
 | W<sub>nb2</sub> | 300n | 6 |
-
-<br>![sense_amp_graph]()
+<br><br>Here, it is the graph of the sense ampllifier with different conditions of the BL and BLB.
+<br>![sense_amp_graph](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/Screenshot%20from%202023-10-16%2013-21-54.png)
 
 ## Schematic Designs
 **PC**<br>
