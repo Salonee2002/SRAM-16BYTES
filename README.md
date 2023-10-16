@@ -164,7 +164,7 @@ Here is the sizes of the sense amplifier and the buffer :
 
 ## Testbench
 
-![test_in](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/testbench_in.png​)
+![test_in](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/testbench_in.png)
 <br>TOP TESTBENCH<br>
 ![test_top](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/testbench_top.png​)
 
