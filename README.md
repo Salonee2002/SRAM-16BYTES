@@ -218,6 +218,7 @@ In our circuit we have operated in 20Mhz.
 ## Conclusion
 
 | | Min delay | Max delay |
+| :---------: | :----------: | :----------: |
 | read | 2.757ns | 5.959ns |
 | write | 1.517ns | 2.879ns |
 | PC_BL | 296.2ps | 621.8ps |
