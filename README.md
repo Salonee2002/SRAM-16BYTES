@@ -186,27 +186,35 @@ From this graph we have also calculated the delays, i.e write delay, read delay,
 **TO READ OR WRITE '1' :**
 | Corners | Operation | -40 | 27 | 85 |
 | :---------: | :----------: | :----------: | :----------: | :----------: |
-| Wp | read| 2.355ns | 1.841ns | 1.81ns |
-|  | write| 942.3ps | 1.037ns | 1.126ns |
-| Tm | read| 4.527ns | 4.343ns | 4.189ns |
-|  | write | 1.178ns | 1.303ns | 1.419ns |
-| Ws | read | 6.142ns | 6.033ns | 5.894ns |
-|  | write | 1.49ns | 1.651ns | 1.796ns |  
+| Wp | read| 3.165ns | 2.847ns | 2.757ns |
+|  | write| 1.517ns | 1.669ns | 1.81ns |
+| Tm | read| 4.567ns | 4.412ns | 4.299ns |
+|  | write | 1.895ns | 2.09ns | 2.28ns |
+| Ws | read | 5.959ns | 5.817ns | 5.69ns |
+|  | write | 2.397ns | 2.649ns | 2.879ns |  
 
 **PC_BL delay and PC_dec delay**
 **PC to BL delay**
 | Corners | -40 | 27 | 85 |
 | :---------: | :----------: | :----------: | :----------: |
-| Tm | 350.5p | 383.1p | 309.7p |
-| Wp | 292.1p | 314.6p | 240.7p |
-| Ws | 410.5p | 464p | 458.3p |  
+| Wp | 399.7ps | 428ps | 296.2ps |
+| Tm | 473.6ps | 517.4ps | 384.7ps |
+| Ws | 547.1ps | 621.8ps | 601ps |  
 
 **PC to decoder delay**
 | Corners | -40 | 27 | 85 |
 | :---------: | :----------: | :----------: | :----------: |
-| Tm | 659.9ps | 718.1ps | 758.6ps |
 | Wp | 528.2psps | 575.8ps | 610.7ps |
-| Tm | 828.1ps | 899.5ps | 948.3ps |  
+| Tm | 659.9ps | 718.1ps | 758.6ps |
+| TWs | 828.1ps | 899.5ps | 948.3ps |  
+
+
+**Power consumption**
+| Corners | -40 | 27 | 85 |
+| :---------: | :----------: | :----------: | :----------: |
+| Wp | 849.3us | 976.25us | 1.049ms |
+| Tm | 570.1ps | 649.4ps | 683.1us |
+| Ws | 296.7us | 899.5ps | 948.3ps |  
 
 From these tables, we can see the delays are more for reading zero (0) than one (1) because the pmos we have used in sense amplifier's buffer has more strength than the nmos used in buffer. As we know, pmos is a pull-up device, therefore, discharging in the node of sense amplifier takes more time than reading 1.
 We can also find that delays are abnormal because the node voltage of the sense amplifier is not being stable at the 999.1mV when BL and BLB are 1.8V.
@@ -217,6 +225,9 @@ In our circuit we have operated in 20Mhz.
 
 ## Conclusion
 
+We have designed a 16 byte SRAM having 16 rows and 8 columns (each row of 1 byte). We have used pre-charge circuit to pre-charge the bitline to 1.8V, row decoder to select the row for performing the operation, write driver to write into the SRAM and sense amplifier to read the data from SRAM.
+The maximum operating frequency is 50Mhz.
+The worst case power consuption is 1.049U watt at worst power (corner) and 85&deg;C. And the minimum and maximum delays are shown below :<br>
 | | Min delay | Max delay |
 | :---------: | :----------: | :----------: |
 | read | 2.757ns | 5.959ns |
