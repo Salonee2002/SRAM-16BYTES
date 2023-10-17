@@ -89,7 +89,7 @@ Why do we do pre-charging or pre-discharging?
 Before reading or writing from/to the SRAM, we need to make the BL and BLB of same voltage, we can do it by either ways, by pre-charging them to 1.8V or pre-discharging them to 0V. 
 
 Then the next question arises that why did we go for pre-charge and not pre-discharge? <br>
-If we are going for pre-discharge then the area of the transistors increases by ____________________.
+If we are going for pre-discharge then the area of the transistors increases by 11.9%.
 
 Can we go for pre-charge and pmos as the access transistors?
 It's technically possible to use PMOS transistors for access during pre-charge, it would be unconventional and may introduce unnecessary complexity and potential performance drawbacks.
@@ -199,14 +199,14 @@ From this graph we have also calculated the delays, i.e write delay, read delay,
 | :---------: | :----------: | :----------: | :----------: |
 | Tm | 350.5p | 383.1p | 309.7p |
 | Wp | 292.1p | 314.6p | 240.7p |
-| Tm | 410.5p | 464p | 458.3p |  
+| Ws | 410.5p | 464p | 458.3p |  
 
 **PC to decoder delay**
 | Corners | -40 | 27 | 85 |
 | :---------: | :----------: | :----------: | :----------: |
-| Tm | 1.043ns | 1.187ns | 1.297ns |
-| Wp | 874.1ps | 992.2ps | 1.096ns |
-| Tm | 1.253ns | 1.418ns | 1.555ns |  
+| Tm | 659.9ps | 718.1ps | 758.6ps |
+| Wp | 528.2psps | 575.8ps | 610.7ps |
+| Tm | 828.1ps | 899.5ps | 948.3ps |  
 
 From these tables, we can see the delays are more for reading zero (0) than one (1) because the pmos we have used in sense amplifier's buffer has more strength than the nmos used in buffer. As we know, pmos is a pull-up device, therefore, discharging in the node of sense amplifier takes more time than reading 1.
 We can also find that delays are abnormal because the node voltage of the sense amplifier is not being stable at the 999.1mV when BL and BLB are 1.8V.
@@ -217,4 +217,10 @@ In our circuit we have operated in 20Mhz.
 
 ## Conclusion
 
+| | Min delay | Max delay |
+| read | 2.757ns | 5.959ns |
+| write | 1.517ns | 2.879ns |
+| PC_BL | 296.2ps | 621.8ps |
+| PC_dec | 528.2ps | 948.3ps |
+| Power | 296.7uW | 1.049mW |  
 
