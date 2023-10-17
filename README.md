@@ -93,8 +93,7 @@ If we are going for pre-discharge then the area of the transistors increases by 
 
 Can we go for pre-charge and pmos as the access transistors?
 It's technically possible to use PMOS transistors for access during pre-charge, it would be unconventional and may introduce unnecessary complexity and potential performance drawbacks.
-NMOS transistors are used for active pull-down operations in SRAM cells because they can discharge the storage nodes quickly when needed. And using PMOS can charge up the node quickly and can toggle the node.
-
+NMOS transistors are used for active pull-down operations in SRAM cells because they can discharge the storage nodes quickly when needed. And using PMOS can discharge but taking up longer time than NMOS making the device slower.
 
 ## Row Decoder
 
