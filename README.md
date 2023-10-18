@@ -29,7 +29,6 @@ For making a memory of 16 Bytes we need 16 rows and 8 columns of SRAM. For singl
 A 6T SRAM cell is composed of six transistors arranged in a specific configuration. The six transistors consist of two cross-coupled inverters and two access transistors. The cell stores a single bit of data. The two cross-coupled inverters provide the latching mechanism for storing the bit, and the access transistors allow for reading and writing operations. <br>
 ![6t_inv](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6t_inv.drawio(1).png)<br>
 
-For writing to or reading from the SRAM the access transistor should be ON. <br>
 ![6T_sram](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6T_sram.drawio.png)<br>
 **M3 and M4 are called ACCESS TRANSISTORS.**
 
