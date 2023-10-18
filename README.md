@@ -27,7 +27,7 @@ For making a memory of 16 Bytes we need 16 rows and 8 columns of SRAM. For singl
 ## 6T SRAM Cell
 
 6T SRAM is basically two inveters connected back to back such that input of one is output for other. <br>
-![6t_inv]()<br>
+![6t_inv](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6t_inv.drawio.png)<br>
 
 For writing to or reading from the SRAM the access transistor should be ON. <br>
 ![6T_sram](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6T_sram.drawio.png)<br>
