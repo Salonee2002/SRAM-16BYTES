@@ -20,11 +20,13 @@ Hi. This project aims to provide a comprehensive knowledge how we initiated our 
 SRAM, or Static Random-Access Memory, is a fundamental component in modern digital systems, widely used for fast, volatile data storage. It plays a crucial role in processors, memory hierarchies, and various application-specific integrated circuits (ASICs). Unlike dynamic-RAM which must be continuosly refreshed SRAM doesn't have this requirement resulting better performance and low power usage. 
 Here is the block diagram of the SRAM:
 
-![sram_block](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sram_block_1.drawio.png)
+![sram_block](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sram_block_1.drawio.png)<br>
+
+For making a memory of 16 Bytes we need 16 rows and 8 columns of SRAM. For single SRAM, there exist a small parasitic capacitor. But for 16 SRAM in one column each parasitic capacitor are in parallel, so they gets added up. So, parasitic capcitances of 200fF (nearly) are introduced at the BL and BLB (bitline) node.
 
 ## 6T SRAM Cell
 
-For making a memory of 16 Bytes we need 16 rows and 8 columns of SRAM. For single SRAM, there exist a small parasitic capacitor. But for 16 SRAM in one column each parasitic capacitor are in parallel, so they gets added up. For writing to or reading from the SRAM the access transistor should be ON. <br>
+ For writing to or reading from the SRAM the access transistor should be ON. <br>
 ![6T_sram](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6T_sram.drawio.png)<br>
 **M3 and M4 are called ACCESS TRANSISTORS.**
 
