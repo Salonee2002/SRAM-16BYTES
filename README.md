@@ -25,7 +25,10 @@ Here is the block diagram of the SRAM:
 
 For making a memory of 16 Bytes we need 16 rows and 8 columns of SRAM. For single SRAM, there exist a small parasitic capacitor. But for 16 SRAM in one column each parasitic capacitor are in parallel, so they gets added up. So, parasitic capcitances of 200fF (nearly) are introduced at the BL and BLB (bitline) node.
 
-## 6T SRAM Cell
+## COMPONENTS  
+<br>     
+
+### 6T SRAM CELL
 
 A 6T SRAM cell is composed of six transistors arranged in a specific configuration. The six transistors consist of two cross-coupled inverters and two access transistors. The cell stores a single bit of data. The two cross-coupled inverters provide the latching mechanism for storing the bit, and the access transistors allow for reading and writing operations. <br>
 ![6t_inv](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6t_inv.drawio(1).png)<br>
@@ -33,7 +36,7 @@ A 6T SRAM cell is composed of six transistors arranged in a specific configurati
 ![6T_sram](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6T_sram.drawio.png)<br>
 **M3 and M4 are called ACCESS TRANSISTORS.**
 
-### Working 
+#### Working 
 Before reading or writing the two nodes, BL and BLB (bitlines), should have the same voltage. We can do this in 2 ways - pre-charge and pre-discharge. But here, we have done pre-charge. 
 Let initially the data is 0 at node-1 and 1 at node-2. Since the node-1 is 0, NMOS (transistor-1) is ON and similarly PMOS (transistor-6) is ON. After, pre-charge when WL is high, the access transistors are ON, i.e transistor-3 and transistor-4. Since BL and BLB is at Vdd (1.8V), the current starts flowing from transistor-3 to transistor-1 discharging the parasitic capacitance. These 2 transisitors act like 2 resistors connected in series. And according to voltage divider rule gradually node-1 increases and BL node decreases ( BL doesn't decreases to 0). We need to set the node-1 voltage to less than 0.6V so that it doesn't toggle. So, we have set the node voltage to 0.3V. On the other hand, transistor-4 is OFF so, BLB doesn't change and remains at Vdd. This difference between BL and BLB is connected to the sense amplifier reading and giving the output as 0 or 1 (if BL<BLB, it reads 0 and if BL>BLB, it reads 1). From above mentioned, node-2 is 1 and we want to overwrite it by 0. So, the BLB is 0 (as we want to overwrite by 0). The current flows from transistor-6 to transistor-4 charging the parasitic capacitance. Here the transistors also act like resistors in series. While reading transistor-3 is in saturation region and transistor-1 is in linear region and while writing transistor-6 is in linear and transistor-4 is in saturation region.
 
@@ -42,7 +45,7 @@ If we set the node voltage as 0.6V it may work fine but for any abnormal conditi
 
 Why transistor-3 is in saturation while in reading?
 
-### Designing of the transistors
+#### Designing of the transistors
 ![read_op](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_operation.drawio.drawio.png)<br>
 For M3, Vgs = 1.8-0.3 = 1.5V, Vds = 1.5V. So,Vds>Vgs-Vt. Hence M3 is in **saturation**. <br><br>
 **$I_{\text{DS3}} = \frac{1}{2} \mu_{\text{n}} C_{\text{ox}} \frac{W}{L} (V_{\text{GS}} - V_{\text{th}})^2$**<br><br>
@@ -69,29 +72,29 @@ Since, I5 = I3<br><br>
 <span style="font-size: larger;">**$\frac{(\frac{W}{L})_5}{(\frac{W}{L})_3}$** = 2 * 5 * 0.654</span> <br><br>
 **$(\frac{W}{L})_5 = 6.54 (\frac{W}{L})_3$** 
 
-### DC sweep (reading)
+#### DC sweep (reading)
 Varying Vbl from 0 to Vdd the node-1 voltage (Vx) increases gradually and becomes constant at our set voltage 0.3V.<br>
 ![read_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_sweep.png)
 
-### Transient (reading)
+#### Transient (reading)
 When Vwl=1 it reads the node-1 voltage, i.e 0.
 ![read_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_trans.png)
 
-### DC sweep (writing)
+#### DC sweep (writing)
 varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
 ![write_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_sweep.png)
 
-### Transient (writing)
+#### Transient (writing)
 When Vwl=1 it reads the node-1 voltage, i.e 0.
 ![write_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_trans.png)
 
-### SNM
+#### SNM
 SNM is the measure of stability of the SRAM cell to hold its data against noise. SNM of SRAM is defined as minimum amount of noise voltage present on the storing nodes of SRAM requires to flip the state of the cell. This graph is plotted between the node-1 and node-2.<br>
 ![SNM_setup](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/SNM_setup.drawio.png)<br>
 
 ![SNM](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/SNM.png)
 
-## Pre-Charge Circuit
+### Pre-Charge Circuit
 
 This is the circuit for pre-charge.<br><br>
 ![PC](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/PC.drawio.png)<br>
@@ -106,14 +109,14 @@ Can we go for pre-charge and pmos as the access transistors?
 It's technically possible to use PMOS transistors for access during pre-charge, it would be unconventional and may introduce unnecessary complexity and potential performance drawbacks.
 NMOS transistors are used for active pull-down operations in SRAM cells because they can discharge the storage nodes quickly when needed. And using PMOS can discharge but taking up longer time than NMOS making the device slower.
 
-## Row Decoder
+### Row Decoder
 
 The combinational circuit that change the binary informaton into 2^N output lines is known as decoder. Here, we have used 4:16 decoder, i.e 4 input lines and 16 output lines decoder.<br>
 ![Row_decoder](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/row_decoder.drawio.png)<br>
 Row decoder is used to select the row in which we want to write 8-bits data or read 8-bits data to or from the SRAM.<br>
 So, basically, we provide the 4-bit address to the decoder where we want to perform the read or write operation. Inside the decoder if the control signal is 1 then the decoder output is the desired address. And this output is the **wordline** that goes to the SRAM to select the row (in each row 8 SRAMs are present) to read or write.
 
-## Write Driver
+### Write Driver
 
 This is the write driver.<br>
 ![Write_driver](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_driver.drawio.png)<br><br>
@@ -123,7 +126,7 @@ This is write driver switch. Its basically used to write the data to the SRAM. <
 When rw and ctrl signal are both high RW signal is high. And when RW is high the driver switch is ON. din is the input and this will be written to the SRAM through BL and BLB.<br><br>
 ![Write_ctrl](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/RW.drawio.png)<br>
 
-## Sense Amplifier
+### Sense Amplifier
 
 It is a differencial amplifier based sense amplifier. This device allows a quick reading of the differencial signal on the bit lines, so that the discharging process can be stopped as soon as possible, to the advantage of speed and power consumption.<br>
 ![sense_amp](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sense_amp.drawio.png)<br>
