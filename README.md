@@ -1,6 +1,6 @@
 # 16 BYTES CMOS SRAM
 
-Hi. This project aims to provide a comprehensive knowledge how we initiated our work for SRAM and then went on learning the project.
+Hi. This project aims to provide a comprehensive knowledge what we learnt during this project.
 
 ## Content
 
