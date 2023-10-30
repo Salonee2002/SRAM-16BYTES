@@ -44,7 +44,7 @@ Let initially the data is 0 at node-1 and 1 at node-2. Since the node-1 is 0, NM
 Why do we need to set the node-1 voltage to less than 0.6V?  
 If we set the node voltage as 0.6V it may work fine but for any abnormal conditions developed unknowingly (let's say a spike is generated), the node voltage increases more than 0.6V. Due to this condition the the other half of the SRAM in which PMOS is ON to read 1 will not get ON and instead NMOS will be ON. And if NMOS gets ON then the node storing 1.8V will be discharged and will again read 0.
 
-#### Designing of the transistors
+#### Sizing of the transistors
 ![read_op](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_operation.drawio.drawio.png)<br>
 For M3, Vgs = 1.8-0.3 = 1.5V, Vds = 1.5V. So,Vds>Vgs-Vt. Hence M3 is in **saturation**. <br><br>
 **$I_{\text{DS3}} = \frac{1}{2} \mu_{\text{n}} C_{\text{ox}} \frac{W}{L} (V_{\text{GS}} - V_{\text{th}})^2$**<br><br>
