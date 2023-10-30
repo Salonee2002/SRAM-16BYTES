@@ -5,7 +5,7 @@ Hi. This project aims to provide a comprehensive knowledge how we initiated our 
 ## Content
 
 - [Introduction](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#introduction)
-- [Components]()
+- [Components](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#components)
   - [6T SRAM Cell](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#6t-sram-cell)
   - [Pre-Charge Circuit](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#pre-charge-circuit)
   - [Row Decoder](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#row-decoder)
