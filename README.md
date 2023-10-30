@@ -11,7 +11,6 @@ Hi. This project aims to provide a comprehensive knowledge how we initiated our 
   - [Row Decoder](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#row-decoder)
   - [Write Driver](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#write-driver)
   - [Sense Amplifier](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#sense-amplifier)
-- [Schematic Designs](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#schematic-designs)
 - [Testbench](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#testbench)
 - [Result Analysis and Discussion](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#result-analysis-and-discussion)
 - [Conclusion](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#conclusion)
@@ -34,16 +33,16 @@ A 6T SRAM cell is composed of six transistors arranged in a specific configurati
 ![6t_inv](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6t_inv.drawio(1).png)<br>
 
 ![6T_sram](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/6T_sram.drawio.png)<br>
-**M3 and M4 are called ACCESS TRANSISTORS.**
+**M3 and M4 are called ACCESS TRANSISTORS.**  
+<br><br>Here, it is the 6T SRAM.<br>
+![sram_sc](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sram_sc.png)<br><br>
 
 #### Working 
 Before reading or writing the two nodes, BL and BLB (bitlines), should have the same voltage. We can do this in 2 ways - pre-charge and pre-discharge. But here, we have done pre-charge. 
 Let initially the data is 0 at node-1 and 1 at node-2. Since the node-1 is 0, NMOS (transistor-1) is ON and similarly PMOS (transistor-6) is ON. After, pre-charge when WL is high, the access transistors are ON, i.e transistor-3 and transistor-4. Since BL and BLB is at Vdd (1.8V), the current starts flowing from transistor-3 to transistor-1 discharging the parasitic capacitance. These 2 transisitors act like 2 resistors connected in series. And according to voltage divider rule gradually node-1 increases and BL node decreases ( BL doesn't decreases to 0). We need to set the node-1 voltage to less than 0.6V so that it doesn't toggle. So, we have set the node voltage to 0.3V. On the other hand, transistor-4 is OFF so, BLB doesn't change and remains at Vdd. This difference between BL and BLB is connected to the sense amplifier reading and giving the output as 0 or 1 (if BL<BLB, it reads 0 and if BL>BLB, it reads 1). From above mentioned, node-2 is 1 and we want to overwrite it by 0. So, the BLB is 0 (as we want to overwrite by 0). The current flows from transistor-6 to transistor-4 charging the parasitic capacitance. Here the transistors also act like resistors in series. While reading transistor-3 is in saturation region and transistor-1 is in linear region and while writing transistor-6 is in linear and transistor-4 is in saturation region.
 
 Why do we need to set the node-1 voltage to less than 0.6V?  
-If we set the node voltage as 0.6V it may work fine but for any abnormal conditions developed unknowingly (let's say a spike is generated), the node voltage increases 
-
-Why transistor-3 is in saturation while in reading?
+If we set the node voltage as 0.6V it may work fine but for any abnormal conditions developed unknowingly (let's say a spike is generated), the node voltage increases more than 0.6V. Due to this condition the the other half of the SRAM in which PMOS is ON to read 1 will not get ON and instead NMOS will be ON. And if NMOS gets ON then the node storing 1.8V will be discharged and will again read 0.
 
 #### Designing of the transistors
 ![read_op](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_operation.drawio.drawio.png)<br>
@@ -73,19 +72,19 @@ Since, I5 = I3<br><br>
 **$(\frac{W}{L})_5 = 6.54 (\frac{W}{L})_3$** 
 
 #### DC sweep (reading)
-Varying Vbl from 0 to Vdd the node-1 voltage (Vx) increases gradually and becomes constant at our set voltage 0.3V.<br>
+Varying Vbl from 0 to Vdd the node-1 voltage (Vx) increases gradually and becomes constant at our set voltage 0.3V.<br><br>
 ![read_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_sweep.png)
 
 #### Transient (reading)
-When Vwl=1 it reads the node-1 voltage, i.e 0.
+When Vwl=1 it reads the node-1 voltage, i.e 0.<br><br>
 ![read_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/read_trans.png)
 
 #### DC sweep (writing)
-varying Vbl from 1.8V to 0V, the node voltage toggle at 0.
+Varying Vbl from 1.8V to 0V, the node voltage toggle at 0.<br><br>
 ![write_sweep](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_sweep.png)
 
 #### Transient (writing)
-When Vwl=1 it reads the node-1 voltage, i.e 0.
+When Vwl=1 it reads the node-1 voltage, i.e 0.<br><br>
 ![write_trans](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_trans.png)
 
 #### SNM
@@ -100,14 +99,18 @@ This is the circuit for pre-charge.<br><br>
 ![PC](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/PC.drawio.png)<br>
 
 Why do we do pre-charging or pre-discharging?
-Before reading or writing from/to the SRAM, we need to make the BL and BLB of same voltage, we can do it by either ways, by pre-charging them to 1.8V or pre-discharging them to 0V. 
+Before reading or writing from/to the SRAM, we need to make the BL and BLB of same voltage, we can do it by either ways, by pre-charging them to 1.8V or pre-discharging them to 0V. And the difference between BL and BLB, due to falling or rising of the BL and BLB, can be sensed and output can be obtained.
 
 Then the next question arises that why did we go for pre-charge and not pre-discharge? <br>
-If we are going for pre-discharge then the area of the transistors increases by 11.9%.
+If we are going for pre-discharge then the area of the transistors increases by 11.9%. So, minimising the area and having good operative gain we went for the pre-charge.
 
 Can we go for pre-charge and pmos as the access transistors?
 It's technically possible to use PMOS transistors for access during pre-charge, it would be unconventional and may introduce unnecessary complexity and potential performance drawbacks.
-NMOS transistors are used for active pull-down operations in SRAM cells because they can discharge the storage nodes quickly when needed. And using PMOS can discharge but taking up longer time than NMOS making the device slower.
+NMOS transistors are used for active pull-down operations in SRAM cells because they can discharge the storage nodes quickly when needed. And using PMOS can discharge but taking up longer time than NMOS making the device slower.  
+<br>
+<br>
+Here, it is the schematic design of PC.<br><br>
+![PC_sc](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/PC_sc.png)<br><br>
 
 ### Row Decoder
 
@@ -124,7 +127,8 @@ This is write driver switch. Its basically used to write the data to the SRAM. <
 ![Write_switch](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_switch.drawio.png)<br><br>
 **Operation :**
 When rw and ctrl signal are both high RW signal is high. And when RW is high the driver switch is ON. din is the input and this will be written to the SRAM through BL and BLB.<br><br>
-![Write_ctrl](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/RW.drawio.png)<br>
+![Write_ctrl](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/RW.drawio.png)<br><br><br>
+We used transmission gate instead of NMOS and PMOS as switch because if we have used NMOS then the node voltage BL or BLB will only be able to write (V<sub>gs</sub> - V<sub>t</sub>) which is 1.13V instead of writing 1.8V. Similarly, if we use PMOS as switch then we will be only able to write V<sub>t</sub>. So, to over come this promblem we have used TG as it gets short when ON. 
 
 ### Sense Amplifier
 
@@ -146,9 +150,7 @@ We have kept the length of the transistors of buffer as 0.18um.
 Here, in our design we have kept it as 999.1mV. The buffer input voltage is 999.1mV and the first buffer output is 914mV and the final output is designed in such a way that it is either high (1.8V) or low (0V). <br>
 ![sense_amp_buff](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/buffer_SA.png)<br><br>
 By doing the AC analysis of the node, we got the node voltage as 42.75V.
-![sense_amp_node](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/node_voltage_senseamp.png)<br><br>
 And the gain is 32.6dB. The maximum gain is 40dB when the node voltage is 100V during AC analysis.<br> 
-![sense_amp_gain](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/gain_senseamp.png)<br><br>
 
 Here is the sizes of the sense amplifier and the buffer :
 | Transistor | Size | Multipliers |
@@ -163,16 +165,6 @@ Here is the sizes of the sense amplifier and the buffer :
 
 <br><br>Here, it is the graph of the sense ampllifier with different conditions of the BL and BLB.
 <br>![sense_amp_graph](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/Screenshot%20from%202023-10-16%2013-21-54.png)
-
-## Schematic Designs
-**PC**<br>
-![PC_sc](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/PC_sc.png)<br><br>
-**SRAM**<br>
-![sram_sc](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sram_sc.png)<br><br>
-**SRAM_ARRAY**<br>
-![sram_arr_sc](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/sram_array_sc.png)<br><br>
-**WRITE_SWITCH**<br>
-![write_switch](https://github.com/Salonee2002/SRAM-16BYTES/blob/main/write_switch_sc.png)
 
 ## Testbench
 
@@ -230,8 +222,9 @@ From this graph we have also calculated the delays, i.e write delay, read delay,
 | Tm | 570.1ps | 649.4ps | 683.1us |
 | Ws | 296.7us | 899.5ps | 948.3ps |  
 
-From these tables, we can see the delays are more for reading zero (0) than one (1) because the pmos we have used in sense amplifier's buffer has more strength than the nmos used in buffer. As we know, pmos is a pull-up device, therefore, discharging in the node of sense amplifier takes more time than reading 1.
-We can also find that delays are abnormal because the node voltage of the sense amplifier is not being stable at the 999.1mV when BL and BLB are 1.8V.
+From these tables, we can see the delays are more for reading zero (0) than one (1) because the pmos we have used in sense amplifier's buffer has more strength than the nmos used in buffer. As we know, pmos is a pull-up device, therefore, discharging in the node of sense amplifier takes more time than reading 1.  
+We can also find that delays are abnormal because the node voltage of the sense amplifier is not being stable at the 999.1mV when BL and BLB are 1.8V.  
+This happens because 
 
 **The maximum operating frequency is 50Mhz.** <br>
 In our circuit we have operated in 20Mhz.
