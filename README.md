@@ -5,11 +5,12 @@ Hi. This project aims to provide a comprehensive knowledge how we initiated our 
 ## Content
 
 - [Introduction](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#introduction)
-- [6T SRAM Cell](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#6t-sram-cell)
-- [Pre-Charge Circuit](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#pre-charge-circuit)
-- [Row Decoder](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#row-decoder)
-- [Write Driver](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#write-driver)
-- [Sense Amplifier](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#sense-amplifier)
+- [Components]()
+  - [6T SRAM Cell](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#6t-sram-cell)
+  - [Pre-Charge Circuit](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#pre-charge-circuit)
+  - [Row Decoder](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#row-decoder)
+  - [Write Driver](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#write-driver)
+  - [Sense Amplifier](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#sense-amplifier)
 - [Schematic Designs](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#schematic-designs)
 - [Testbench](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#testbench)
 - [Result Analysis and Discussion](https://github.com/Salonee2002/SRAM-16BYTES/tree/main#result-analysis-and-discussion)
